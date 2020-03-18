@@ -1,6 +1,26 @@
 .nav-bar{
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #B0EACD
 }
+
+#searchInput{
+    width: 294px;
+    height: 16px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    border: none;
+}
+
+#searchBar{
+    margin-left: auto;
+ 
+}
+
+
+
+
 ul{
     display: flex;
     list-style: none;
