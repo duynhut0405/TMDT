@@ -1,8 +1,8 @@
 import React from 'react';
 import Home from './containers/Home';
 import './App.css';
-import Header from './components/Home/Header';
-import Nav from './components/Home/Nav';
+import Header from './components/General/Header';
+import Nav from './components/General/Nav';
 import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 function App() {
   return (

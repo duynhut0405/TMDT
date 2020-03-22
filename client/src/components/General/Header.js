@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '../Home/Button';
+import Button from '../General/Button';
 import Image from '../../assets/Logo.svg';
-import '../../styles/components/Home/Header.css';
+import '../../styles/components/General/Header.css';
 const Header =()=>{
     return (
         <div className="header">

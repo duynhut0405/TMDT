@@ -15,10 +15,19 @@
 
 #searchBar{
     margin-left: auto;
+    display: flex;
+    flex:1;
+    justify-content: center;
 }
 
 ul{
     display: flex;
     list-style: none;
+    flex:1;
     justify-content: space-around;
+}
+
+a{
+    text-decoration: none;
+    padding: 0 13px;
 }
