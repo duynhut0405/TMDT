@@ -1,12 +1,12 @@
 import React from 'react';
-import Header from '../components/Header';
-import Nav from '../components/Nav';
+import '../styles/containers/Home.css';
+import BgHeader from '../components/Home/BgHeader';
 const Home =()=>{
     return (
-        <React.Fragment>
-        <Header/>
-        <Nav/>
-        </React.Fragment>
+        <div className="home">
+            <BgHeader/>
+        </div>
     );
 }
 export default Home;
+ 

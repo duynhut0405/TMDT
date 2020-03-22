@@ -1,12 +1,12 @@
 import React from 'react';
-import Button from '../components/Button';
-import Logo from '../assets/Logo.svg';
-import '../styles/components/Header.css';
+import Button from '../Home/Button';
+import Image from '../../assets/Logo.svg';
+import '../../styles/components/Home/Header.css';
 const Header =()=>{
     return (
         <div className="header">
             <div>
-                <img src={Logo} alt="Logo"/>
+                <img className="logo" src={Image} alt="Logo"/>
             </div>
             
             <div id = "btn1">
