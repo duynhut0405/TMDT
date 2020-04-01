@@ -12,7 +12,7 @@ class Cardlist extends React.Component {
                     data.map(item=>(
                         <Card
                         key={item.id}
-                        img={item.img}
+                        img={item.img.src}
                         price={item.price}
                         />
                     ))

@@ -2,9 +2,7 @@ import React from 'react';
 import '../../../styles/components/Home/Card.css';
 
 export default class Card extends React.Component{
-    constructor(props){
-        super(props);
-    }
+    
     render(){
         return(
             <div className="card text-left">
