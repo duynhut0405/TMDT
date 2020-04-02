@@ -1,32 +1,39 @@
 import React from "react";
+import Image from "../../assets/Logo.svg";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebookSquare,
+  faInstagramSquare,
+  faTwitterSquare
+} from "@fortawesome/free-brands-svg-icons";
 
-const footer = () => {
+const Footer = () => {
   return (
     <div className="container">
       {/* footer logo */}
       <div className="footer-logo">
-        <img
-          src="/UNCLE FARM/2760326405_b53faeac-cb65-48b7-9e2e-00bfa0806a32.png"
-          alt="logo"
-          className="footer-logo__image"
-        />
+        <img src={Image} alt="logo" className="footer-logo__image" />
         <p className="footer-logo__text">copyright@2020</p>
       </div>
 
       {/* footer nav */}
-      <div className="footer-nav">
+      <nav className="footer-nav">
         <ul className="footer-nav__menu">
-          <li>
-            <a href="#"></a>HOME
-          </li>
-          <li>
-            <a href="#"></a>ABOUT
-          </li>
-          <li>
-            <a href="#"></a>CONTACT
-          </li>
+          <Link to="/">
+            <li>Home</li>
+          </Link>
+          <Link to="/Products">
+            <li>Our product</li>
+          </Link>
+          <Link to="/Policy">
+            <li>Policy</li>
+          </Link>
+          <Link to="/About">
+            <li>About us</li>
+          </Link>
         </ul>
-      </div>
+      </nav>
 
       {/* <!-- footer contact --> */}
       <div className="footer-contact">
@@ -50,13 +57,13 @@ const footer = () => {
         <p>UncleFarm is a company for buying food and vegetable</p>
         <ul className="footer-about__icon">
           <li>
-            <i className="fab fa-facebook-square"></i>
+            <FontAwesomeIcon icon={faFacebookSquare} />
           </li>
           <li>
-            <i className="fab fa-instagram-square"></i>
+            <FontAwesomeIcon icon={faInstagramSquare} />
           </li>
           <li>
-            <i className="fab fa-twitter-square"></i>
+            <FontAwesomeIcon icon={faTwitterSquare} />
           </li>
         </ul>
       </div>
@@ -64,4 +71,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

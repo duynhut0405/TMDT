@@ -1,4 +1,5 @@
 import React from "react";
+import Image1 from "../../assets/aboutImage/imgInfo.jpeg";
 
 const Info = () => {
   return (
@@ -29,10 +30,7 @@ const Info = () => {
 
         {/* Image */}
         <div className="info-image">
-          <img
-            src="/client/src/assets/aboutImage/photo-1495908333425-29a1e0918c5f.jpeg"
-            alt="image"
-          />
+          <img src={Image1} alt="image" />
         </div>
       </div>
     </div>

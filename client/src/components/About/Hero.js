@@ -1,14 +1,12 @@
 import React from "react";
+import Image0 from "../../assets/aboutImage/bgAbout.jpeg";
 
 const Hero = () => {
   return (
     <div className="hero">
       <div className="container">
         {/* Backgroup image */}
-        <img
-          className="hero-image"
-          src="/client/src/assets/aboutImage/photo-1461354464878-ad92f492a5a0.jpeg"
-        ></img>
+        <img className="hero-image" src={Image0}></img>
 
         {/* text */}
         <div className="hero-text">
