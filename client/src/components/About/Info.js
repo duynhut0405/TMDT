@@ -29,10 +29,12 @@ const Info = () => {
             </div>
           </div>
 
+
           {/* Image */}
           <div className="info-image">
             <img src={Image1} alt="image" />
           </div>
+
         </div>
       </div>
     </div>
