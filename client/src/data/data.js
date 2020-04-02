@@ -15,6 +15,24 @@ export const data=[
         img:{src:'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg'},
         id: '3',
         productName: 'Cầvda',
-        price: '0000000'
+        price: '0000000$'
+    },
+    {
+        img:{src:'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg'},
+        id: '4',
+        productName: 'Cầvấgvknvlada',
+        price: '0000000$'
+    },
+    {
+        img:{src:'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg'},
+        id: '5',
+        productName: 'ànkldnfla',
+        price: '0000000$'
+    },
+    {
+        img:{src:'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg'},
+        id: '6',
+        productName: 'mkvlal',
+        price: '0000000$'
     }
 ]
