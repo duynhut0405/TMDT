@@ -6,7 +6,7 @@ const Hero = () => {
     <div className="hero">
       <div className="container">
         {/* Backgroup image */}
-        <img className="hero-image" src={Image0}></img>
+        <img className="hero-image" src={Image0} alt="hero-img"></img>
 
         {/* text */}
         <div className="hero-text">
