@@ -8,16 +8,17 @@ max-height: 100%;
 }
 
 .iconImg{
-    position: relative;
     display: flex;
+    flex:1;
     max-width: 100%;
-    
+    margin-left:35px;
 }
 
 .btnLocation{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    flex:1;
+    justify-content:flex-end;
     position: relative;
     max-width: 100%;
 }
@@ -26,7 +27,7 @@ max-height: 100%;
     justify-content: center;
     align-items: center;
     max-width: 100%;
-    padding: 30px;
+    margin: 30px;
 }
 
 #btn2{
@@ -34,7 +35,5 @@ max-height: 100%;
     align-items: center;
     justify-content: center;
     max-width: 100%;
+    margin: 30px;
 }
-
-
-

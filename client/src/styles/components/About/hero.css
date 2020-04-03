@@ -1,5 +1,4 @@
 .hero-wrap {
-  position: relative;
 }
 
 .hero-wrap__image {
@@ -18,7 +17,7 @@
 
 .hero-wrap__text {
   position: absolute;
-  top: 40%;
+  top: 80%;
   left: 30%;
   color: white;
   text-align: center;

@@ -2,6 +2,7 @@ import React from 'react';
 import Image from '../../assets/Logo.svg';
 import '../../styles/components/General/Form.css';
 import Button from '../General/Button';
+import {Link} from 'react-router-dom';
 const Form =()=>{
     return (
         <div class="login-wrap">
@@ -11,20 +12,20 @@ const Form =()=>{
                     <img className="logo" src={Image} alt="Logo" />
                 </div>
 
-                <div className="container">
+                <div className="form-container">
                     <input type="text" placeholder="Email" name="uname" required/>
                 </div>
 
-                <div className="container">
+                <div className="form-container">
                     <input type="password" placeholder="Password" name="psw" required/>
                 </div>
                 
-                <div className="container">
+                <div className="form-container">
                     <Button name='Sign In' className="header-btn"/>
                 </div>
                 
                 <div className="forget">
-                    <a href="uit.edu.vn"> Forget your password? </a>
+                    <Link to="/ForgetPass"> Forget your password? </Link>
                 </div>
             
             </form>
