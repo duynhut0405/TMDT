@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./fonts/Fondamento-Regular.ttf";
 import About from "./containers/About";
 import Footer from "./components/General/Footer";
+import Policy from "./containers/Policy";
+
 function App() {
   return (
     <Router>
@@ -19,6 +21,7 @@ function App() {
               <Home/>
             )}
           />
+          <Route path ="/Policy" component={Policy}/>
           <Route path="/About" component={About} />
       </Switch>
           <Footer />
