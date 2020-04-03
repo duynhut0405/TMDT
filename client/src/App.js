@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Home from "./containers/Home";
 import "./App.css";
 import Header from "./components/General/Header";
@@ -6,29 +6,25 @@ import Nav from "./components/General/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./fonts/Fondamento-Regular.ttf";
 import About from "./containers/About";
-import Footer from "./components/General/Footer";
-function App() {
-  const [stateSignUp, setstateSignUp] = useState(false);
-  function toggleSignUp(params) {
-    setstateSignUp(params);
-  }
+import footer from "./components/General/footer";
+import signUp from "./containers/signUp";
+function App(props) {
   return (
     <Router>
       <div className="App">
-        <Header handleEventClickOnButton={toggleSignUp} />
+        <Header />
         <Nav />
         <Switch>
-          <Route path="/" exact
+        <Route path="/" exact
             render={props => (
-              <Home
-                ClickSignUp={stateSignUp}
-                style={{ position: "relative" }}
-              ></Home>
+              <Home/>
             )}
           />
-          <Route path="/About" component={About} />
+          />
+          <Route path="/About" exact component={About} />
+          <Route path="/signUp" exact component={signUp} /> 
       </Switch>
-          <Footer />
+          <footer />
     </div>
     </Router>
   );
