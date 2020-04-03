@@ -6,22 +6,27 @@ import Nav from "./components/General/Nav";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./fonts/Fondamento-Regular.ttf";
 import About from "./containers/About";
+import footer from "./components/General/footer";
+import signUp from "./containers/signUp";
 import Footer from "./components/General/Footer";
 function App() {
+
   return (
     <Router>
       <div className="App">
         <Header />
         <Nav />
         <Switch>
-          <Route path="/" exact
+        <Route path="/" exact
             render={props => (
               <Home/>
             )}
           />
-          <Route path="/About" component={About} />
+          />
+          <Route path="/About" exact component={About} />
+          <Route path="/signUp" exact component={signUp} /> 
       </Switch>
-          <Footer />
+          <footer />
     </div>
   </Router>
   );
