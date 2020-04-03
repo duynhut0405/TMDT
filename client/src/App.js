@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
 import Home from "./containers/Home";
 import "./App.css";
 import Header from "./components/General/Header";
@@ -8,7 +8,9 @@ import "./fonts/Fondamento-Regular.ttf";
 import About from "./containers/About";
 import footer from "./components/General/footer";
 import signUp from "./containers/signUp";
-function App(props) {
+import Footer from "./components/General/Footer";
+function App() {
+
   return (
     <Router>
       <div className="App">
@@ -26,7 +28,7 @@ function App(props) {
       </Switch>
           <footer />
     </div>
-    </Router>
+  </Router>
   );
 }
 

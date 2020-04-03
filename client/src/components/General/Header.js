@@ -1,17 +1,15 @@
 import React from 'react';
 import Button from '../General/Button';
+import Form from '../General/Form';
 import Image from '../../assets/Logo.svg';
 import '../../styles/components/General/Header.css';
 import { Redirect, Switch, NavLink } from 'react-router-dom';
-const Header = props => {
-    // console.log(props.history)
+const Header = ()=>{
     return (
         <div className="header">
             <div className="iconImg">
                 <img src={Image} alt="Logo" />
             </div>
-
-
             <div className="btnLocation">
                 <div id="btn1">
                     <Button name='Login' className="header-btn" />
@@ -21,7 +19,9 @@ const Header = props => {
                     <Redirect to='signUp'></Redirect>
                 </div>
 
+
             </div>
+            {<Form/>}
         </div>
     );
 }
