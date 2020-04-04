@@ -4,7 +4,7 @@ import '../../../styles/components/Home/Card.css';
 export default class Card extends React.Component{
     render(){
         return(
-            <div className="card text-left">
+        <div className="card text-left">
             <div>
                 <img className="productImg" src={this.props.img} alt={this.props.productName}/>
             </div>
