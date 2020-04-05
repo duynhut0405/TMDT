@@ -8,6 +8,8 @@ import "./fonts/Fondamento-Regular.ttf";
 import About from "./containers/About";
 import signUp from "./containers/signUp";
 import Footer from "./components/General/Footer";
+import Policy from "./containers/Policy";
+
 function App() {
 
   return (
@@ -17,6 +19,7 @@ function App() {
         <Nav />
         <Switch>
           <Route path="/" exact component={Home}/>
+          <Route path ="/Policy" component={Policy}/>
           <Route path="/About" exact component={About} />
           <Route path="/SignUp" exact component={signUp} /> 
       </Switch>
