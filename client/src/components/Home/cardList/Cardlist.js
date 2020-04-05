@@ -43,38 +43,3 @@ class Cardlist extends React.Component{
 }
 export default Cardlist;
 
-
-// }
-
-// function Cardlist() {
-//   console.log(data);
-//   let content = [];
-//   let i = 0;
-//   data.forEach((item, i) =>{
-//       if((i+1) % 4 == 0){
-//         content.push(
-//             <div className="row">
-//                 <Card
-//                   key={item.id}
-//                   img={item.img.src}
-//                   price={item.price}
-//                   productName={item.productName}
-//                   />
-//             </div>
-//         )
-//       }else{
-//           content.push(
-//           <Card
-              // key={item.id}
-              // img={item.img.src}
-              // price={item.price}
-              // productName={item.productName}
-//               />);
-//       }
-//   });
-//   console.log(content);
-//   return (
-//     content
-//   );
-// }
-
