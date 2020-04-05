@@ -1,8 +1,16 @@
 import React from "react";
 import '../../styles/components/SignUp/SignUp.css';
+import bg_signup from '../../assets/ovegets.jpeg';
 const SignUp = props => {
    return (
     <div className="signup_box_container">
+      <div className="bg-signup">
+      <img className="bg-image" src={bg_signup} alt="hero-img"></img>
+      <div className="bg-text">
+       <h3>READY TO DIVE INTO THE WORLD OF</h3>
+       <h1>VEGATABLE?</h1>
+      </div>
+      </div>
       <div className="signup_box">
         <div className="container-form">
           <h1>SIGN UP </h1>
@@ -13,11 +21,11 @@ const SignUp = props => {
           <br />
           <label>Password</label>
           <br />
-          <input className="input-field" id="password"></input>
+          <input type="password" className="input-field" id="password"></input>
           <br />
           <label>Confirm password</label>
           <br />
-          <input className="input-field" id="confirm-password"></input>
+          <input type="password" className="input-field" id="confirm-password"></input>
           <br />
           <label>Email</label>
           <br />
