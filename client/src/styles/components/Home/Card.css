@@ -1,6 +1,7 @@
 .card{
     display: flex;
     flex-direction: column;
+    margin: 30px;
 }
 .productImg{
     height: 300px;
@@ -9,4 +10,8 @@
 }
 .text-left{
     text-align: left;
+}
+.cartIcon{
+    display: flex;
+    justify-content: center;
 }
