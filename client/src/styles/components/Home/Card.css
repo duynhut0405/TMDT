@@ -1,8 +1,7 @@
 .card{
-    width: 22%;
-    height: 350px;
-    float:left;
-    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
 }
 .productImg{
     width: 100%;

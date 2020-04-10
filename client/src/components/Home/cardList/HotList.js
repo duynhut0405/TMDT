@@ -1,10 +1,9 @@
 import React from 'react';
-import '../../../styles/components/Home/Cardlist.css';
+import '../../../styles/components/Home/HotList.css';
 import Card from '../cardList/Card';
 import {data} from '../../../data/data';
 
 const hData = data.slice(0,4);
-console.log(hData);
 class HotList extends React.Component{
     constructor(){
       super();

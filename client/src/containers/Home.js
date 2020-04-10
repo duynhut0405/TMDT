@@ -12,7 +12,7 @@ const Home =()=>{
             <CircleWrapper />
             <HotBar/>
             <HotList/>
-            <CardList/>
+            {/* <CardList/> */}
         </div>
         );
         }

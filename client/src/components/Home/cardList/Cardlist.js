@@ -36,11 +36,10 @@ class Cardlist extends React.Component{
   }
   render() {
     return (
-      <div className="classlist-container">
+      <div className="cardlist-container">
         <div className="cardList">
           {this.createList()}
         </div>
-        <div className="clearFloat"></div>
       </div>
     )
   }
