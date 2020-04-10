@@ -1,43 +1,24 @@
 import React from 'react';
 import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
-import {data} from '../../../data/data';
+import { data } from '../../../data/data';
 
-class Cardlist extends React.Component{
-  constructor(){
+class Cardlist extends React.Component {
+  constructor() {
     super();
-    this.state={};
+    this.state = {};
   }
-  createList(){
-    let content = [];
-    let result = [];
-    data.map((item)=>{
-      if((item.id % 4) == 0){
-        result.push(
-          <div className="row">
-            {content}
-          </div>
-        );
-      }
-      else{
-        content.push(
-            <Card 
-            key={item.id}
-            img={item.img.src}
-            price={item.price}
-            productName={item.productName}
-            />
-        )
-      }
-    })
-    console.log(result);
-    return result;
+  createList() {
+     return data.map(item => <Card key={item.id} img={item.img.src} price={item.price} productName={item.productName}></Card>)
   }
-  render(){
+  render() {
     return (
+      <div className="classlist-container">
         <div className="cardList">
-            {this.createList()}
+          {this.createList()}
         </div>
+        <div className="clearFloat"></div>
+      </div>
     )
   }
 }

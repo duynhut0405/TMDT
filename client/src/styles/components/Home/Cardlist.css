@@ -1,8 +1,10 @@
-.cardList{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.cardlist-container{
+    width: 100%;
 }
-.row{
-    display: flex;
+.cardList{
+    width: 80%;
+    margin: auto;
+}
+.clearFloat{
+    clear: both;
 }
