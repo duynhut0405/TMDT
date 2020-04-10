@@ -1,17 +1,17 @@
 .card{
-    display: flex;
-    flex-direction: column;
-    margin: 30px;
+    width: 22%;
+    height: 350px;
+    float:left;
+    margin-right: 30px;
 }
 .productImg{
-    height: 300px;
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    height: auto;
 }
 .text-left{
     text-align: left;
 }
 .cartIcon{
-    display: flex;
+    display: flex;  
     justify-content: center;
 }

@@ -6,8 +6,9 @@ import {data} from '../../../data/data';
 class Cardlist extends React.Component{
   constructor(){
     super();
-    this.state={};
+    this.state = {};
   }
+
   createList(){
     let content = [];
     let result = [];
@@ -33,11 +34,14 @@ class Cardlist extends React.Component{
     console.log(result);
     return result;
   }
-  render(){
+  render() {
     return (
+      <div className="classlist-container">
         <div className="cardList">
-            {this.createList()}
+          {this.createList()}
         </div>
+        <div className="clearFloat"></div>
+      </div>
     )
   }
 }

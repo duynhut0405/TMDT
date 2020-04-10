@@ -2,14 +2,14 @@ import React from "react";
 import '../../styles/components/SignUp/SignUp.css';
 import bg_signup from '../../assets/ovegets.jpeg';
 const SignUp = props => {
-   return (
+  return (
     <div className="signup_box_container">
       <div className="bg-signup">
-      <img className="bg-image" src={bg_signup} alt="hero-img"></img>
-      <div className="bg-text">
-       <h3>READY TO DIVE INTO THE WORLD OF</h3>
-       <h1>VEGATABLE?</h1>
-      </div>
+        <img className="bg-image" src={bg_signup} alt="hero-img"></img>
+        <div className="bg-text">
+          <h3>READY TO DIVE INTO THE WORLD OF</h3>
+          <h1>VEGATABLE?</h1>
+        </div>
       </div>
       <div className="signup_box">
         <div className="container-form">
@@ -36,11 +36,13 @@ const SignUp = props => {
         </div>
         <div className="signup_btn">
           <button className="btn-ok">Sign Up</button>
+
           {/* <button className="btn-cancel" onClick={handleCancel}>
             Cancel
           </button> */}
         </div>
       </div>
+      <div className="clearFloat"></div>
     </div>
   );
 };
