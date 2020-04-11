@@ -13,36 +13,39 @@ const SignUp = props => {
       </div>
       <div className="signup_box">
         <div className="container-form">
-          <h1>SIGN UP </h1>
-          <h4>Please fill in this form to create an account </h4>
-          <label>UserName</label>
-          <br />
-          <input className="input-field" id="username"></input>
-          <br />
-          <label>Password</label>
-          <br />
-          <input type="password" className="input-field" id="password"></input>
-          <br />
-          <label>Confirm password</label>
-          <br />
-          <input type="password" className="input-field" id="confirm-password"></input>
-          <br />
-          <label>Email</label>
-          <br />
-          <input className="input-field" id="email"></input>
-          <br />
-          <input type="checkbox" style={{ width: "auto", height: "auto" }} />
-          <label> Accept the term of Use & Privacy Policy </label>
-        </div>
+          <div className="form-header">
+            <h1>SIGN UP </h1>
+            <h4>Please fill in this form to create an account </h4>
+          </div>
+          <div className="input-field">
+            <div className="user-name">
+              <h3>UserName</h3>
+              <input id="username"></input>
+            </div>
+            <div className="pass">
+              <h3>Password</h3>
+              <input type="password" id="password"></input>  
+            </div>
+            <div className="confirm-pass">
+              <h3>Confirm password</h3>
+              <input type="password" id="confirm-password"></input>
+            </div>
+            <div className="email">
+              <h3>Email</h3>
+              <input type="email" id="email"></input>
+            </div>
+            <div className="check">
+              <input type="checkbox" />
+              <p> Accept the term of Use & Privacy Policy </p>
+            </div>
+          </div>
+          
+        
         <div className="signup_btn">
           <button className="btn-ok">Sign Up</button>
-
-          {/* <button className="btn-cancel" onClick={handleCancel}>
-            Cancel
-          </button> */}
+        </div>
         </div>
       </div>
-      <div className="clearFloat"></div>
     </div>
   );
 };
