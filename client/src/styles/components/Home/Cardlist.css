@@ -1,8 +1,0 @@
-.cardlist-container{
-    width: 100%;
-    display: flex;
-}
-.cardList{
-    display: flex;
-    flex-direction: column;
-}
