@@ -3,6 +3,7 @@ import Image from '../../assets/Logo.svg';
 import '../../styles/components/General/Form.css';
 import Button from '../General/Button';
 import {Link} from 'react-router-dom';
+
 const Form =()=>{
     return (
         <div class="login-wrap">
