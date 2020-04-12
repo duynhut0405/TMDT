@@ -3,7 +3,7 @@ import '../../styles/components/General/Button.css';
 
 const Button = props =>{
     return(
-            <input type="button" value={props.name} className="header-btn" style={{backgroundColor:props.color}} onClick={props.onClick}/>
+            <button className="header-btn" style={{backgroundColor:props.color}} onClick={props.onClick}>{props.name}</button>
     );
 }
 
