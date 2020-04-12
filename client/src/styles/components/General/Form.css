@@ -54,7 +54,7 @@ h2 {
     margin-bottom: 5px;
 }
 
-a:-webkit-any-link {
+.forget a:-webkit-any-link {
     color: black;
     cursor: pointer;
     text-decoration: underline;
@@ -97,7 +97,7 @@ input:focus, textarea:focus, select:focus {
 }
 
 
-.container {
+.form-container {
     padding: 8px;
     padding-top: 20px;
     display: flex;
