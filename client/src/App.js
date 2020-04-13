@@ -9,6 +9,7 @@ import About from "./containers/About";
 import signUp from "./containers/signUp";
 import Footer from "./components/General/Footer";
 import Policy from "./containers/Policy";
+import Forgot_pass from "./containers/ForgetPass";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <Route path ="/Policy" component={Policy}/>
           <Route path="/About" exact component={About} />
           <Route path="/SignUp" exact component={signUp} /> 
+          <Route path="/ForgetPass" exact component={Forgot_pass} />
       </Switch>
           <Footer />
     </div>
