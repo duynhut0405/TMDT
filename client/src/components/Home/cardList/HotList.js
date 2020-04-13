@@ -3,7 +3,7 @@ import '../../../styles/components/Home/HotList.css';
 import Card from '../cardList/Card';
 import {data} from '../../../data/data';
 
-const hData = data;
+const hData = data.slice(0,4);
 class HotList extends React.Component{
     constructor(){
       super();
@@ -30,7 +30,7 @@ class HotList extends React.Component{
       return (
           <div className="hotList">
           <ul>
-          <div style={{overflowX:'scroll',display:'flex',overflow:'hidden'}}>
+          <div style={{overflowX:'scroll',display:'flex'}}>
               {this.createHotList()}
               </div>
           </ul>
