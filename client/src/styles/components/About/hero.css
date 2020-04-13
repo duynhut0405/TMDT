@@ -1,4 +1,7 @@
 .hero-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-wrap__image {
@@ -17,8 +20,8 @@
 
 .hero-wrap__text {
   position: absolute;
-  top: 80%;
-  left: 30%;
+  /* top: 80%;
+  left: 30%; */
   color: white;
   text-align: center;
 }

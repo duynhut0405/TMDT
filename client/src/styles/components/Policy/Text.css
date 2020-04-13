@@ -1,11 +1,19 @@
 .Policy {
-    
+    display: flex;
+    justify-content: center;
 }
 
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
+.policyInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 1440px;
 }
+
+.policyInfo h1{
+    margin: 10px 10px 10px 0;
+}
+
 
 pre{
     word-wrap:break-word;

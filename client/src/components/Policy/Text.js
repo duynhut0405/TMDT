@@ -4,13 +4,16 @@ import "../../styles/components/Policy/Text.css"
 const Policy = () => {
     return (
       <div className="Policy">
-          <div className="container">
+          <div className="policyInfo">
           <h1>Our Policy</h1>
           <h2> Privacy Policy for Company Name</h2>
           <p> At Website Name, accessible at Website. com, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by Website Name and how we use it.</p>
+            <br/>
             <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us through email at Email@Website.com</p>
             <p>This privacy policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in Website Name. This policy is not applicable to any information collected offline or via channels other than this website.</p>
+            <br/>
             <p>Consent</p>
+            <br/>
             <p>By using our website, you hereby consent to our Privacy Policy and agree to its terms.</p>
             <p>Information we collect</p>
             <p>The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.</p>

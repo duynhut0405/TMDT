@@ -1,4 +1,4 @@
-input[type=email] {
+.Forgot_pass input[type=email] {
     width: 40%;
     padding: 5px 10px;
     margin: auto;
@@ -30,12 +30,12 @@ input[type=email] {
   width: 15%;
 }
 
-h1 {
+.forget-pass-text h1 {
   padding-bottom: 20px;
   font-family: Fondamento;
 }
 
-p {
+.forget-pass-text p {
   padding-bottom: 20px;
 }
 
