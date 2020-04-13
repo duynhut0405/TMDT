@@ -7,7 +7,7 @@ const HotBar=()=>{
                 <p>HOT!!!</p>
             </div>
             <div className="watchmore">
-                <p>Xem thêm</p>
+                <p><a href="#">Xem thêm</a></p>
             </div>
         </div>
     );

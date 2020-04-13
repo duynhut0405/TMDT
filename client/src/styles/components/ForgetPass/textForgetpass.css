@@ -1,4 +1,4 @@
-input[type=email] {
+.Forgot_pass input[type=email] {
     width: 40%;
     padding: 5px 10px;
     margin: auto;
