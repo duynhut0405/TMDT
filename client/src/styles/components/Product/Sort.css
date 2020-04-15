@@ -1,0 +1,7 @@
+.sort-zone{
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    height: fit-content;
+    justify-content: flex-end;
+}

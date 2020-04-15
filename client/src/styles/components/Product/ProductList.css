@@ -1,0 +1,23 @@
+.Product-list{
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+}
+.Product-list li{
+    border-bottom: 2px solid black;
+}
+.Product-list ul{
+    display: flex;
+    flex-direction: column;
+}
+.Fruit{
+    display: flex;
+    flex-direction: column;
+}
+.Fruit p{
+    border-bottom: 2px solid black;
+}
+.Fruit li{
+    display: flex;
+    padding-left: 15px;
+}

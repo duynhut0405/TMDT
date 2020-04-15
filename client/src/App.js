@@ -13,7 +13,6 @@ import Forgot_pass from "./containers/ForgetPass";
 import Products from "./containers/Product";
 
 function App() {
-
   return (
     <Router>
       <div className="App">
@@ -26,6 +25,7 @@ function App() {
           <Route path="/SignUp" exact component={signUp} /> 
           <Route path="/ForgetPass" exact component={Forgot_pass} />
           <Route path="/Products" exact component={Products}/>
+      
       </Switch>
           <Footer />
     </div>
