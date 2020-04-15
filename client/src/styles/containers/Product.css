@@ -1,4 +1,13 @@
 .product{
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+.product-shop{
+    display: flex;
+    flex-direction: row;
+}
+.product-main{
+    display: flex;
+    flex-direction: column;
 }

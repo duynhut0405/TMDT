@@ -13,7 +13,7 @@ class Cardlist extends React.Component{
     let content = [];
     let result = [];
     data.map((item)=>{
-      if((item.id % 4) == 0 || item.id == 0){
+      if((item.id % 4) == 0){
         result.push(
           <ul className="row">
             {content}
