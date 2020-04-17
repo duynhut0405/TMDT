@@ -2,3 +2,7 @@
     display: flex;
     width: 100%;
 }
+.hotList ul{
+    display: flex;
+    flex-direction: row;
+}

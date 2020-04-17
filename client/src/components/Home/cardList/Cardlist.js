@@ -8,32 +8,31 @@ class Cardlist extends React.Component{
     super();
     this.state = {};
   }
-
   createList(){
-    let content = [];
-    let result = [];
-    data.map((item)=>{
-      if((item.id % 4) == 0){
-        result.push(
-          <ul className="row">
-            {content}
-          </ul>
-        );
-      }
-      else{
-        content.push(
-            <Card 
-            key={item.id}
-            img={item.img.src}
-            price={item.price}
-            productName={item.productName}
-            />
-        )
-      }
-    })
-    console.log(result);
-    return result;
-  }
+  let content = [];
+  let result = [];
+  data.map((item)=>{
+    if((item.id % 4) == 0){
+      result.push(
+        <ul className="row">
+          {content}
+        </ul>
+      );
+    }
+    else{
+      content.push(
+          <Card 
+          key={item.id}
+          img={item.img.src}
+          price={item.price}
+          productName={item.productName}
+          />
+      )
+    }
+  })
+  console.log(result);
+  return result;
+}
   render() {
     return (
       <div className="cardlist-container">
@@ -46,3 +45,38 @@ class Cardlist extends React.Component{
 }
 export default Cardlist;
 
+
+
+
+
+//inuse
+
+
+  //test
+  // createContent(){
+  //   let content = [];
+  //   data.map((item)=>{
+  //     content.push(
+  //       <Card 
+  //       key={item.id}
+  //       img={item.img.src}
+  //       price={item.price}
+  //       productName={item.productName}
+  //     />)
+  //   })
+  //   console.log(content);
+  //   return content;
+  // }
+  
+  // createList(){
+  //   let result = [];
+  //   (this.createContent()).map((el)=>{
+  //     if(el % 4 ==0){
+  //       result.push(<div className ="row">{el}</div>)
+  //     }
+  //     else{
+  //     result.push(el);
+  //     }
+  //   })
+  //   return result;
+  // }
