@@ -16,7 +16,7 @@ const Product =()=>{
                <div>
                     <Sort/>
                </div>
-               <div>
+               <div className="product-list">
                     <CardList/>
                </div>
            </div>
