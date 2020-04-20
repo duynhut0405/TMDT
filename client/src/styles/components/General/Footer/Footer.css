@@ -1,7 +1,9 @@
 .footer {
   background-color: #b0eacd;
 }
-
+.footer li{
+  list-style: none;
+}
 .footer-wrap {
   padding: 40px 0;
   display: -webkit-box;

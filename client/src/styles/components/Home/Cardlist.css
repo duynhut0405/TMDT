@@ -1,13 +1,14 @@
 .cardlist-container{
-    width: 90%;
+    width: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    
 }
 .card-container{
-    width: 25%;
-    margin: 0;
+    width: 20%;
+    margin: 10px;
 }
 /* .cardList{
     display: flex;
