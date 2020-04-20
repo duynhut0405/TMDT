@@ -6,7 +6,12 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }
-.hotList ul li{
+.scrollList{
+    display: flex;
     width: 100%;
 }
+/* .hotList ul li{
+    width: 100%;
+} */
