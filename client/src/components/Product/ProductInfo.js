@@ -3,34 +3,43 @@ import '../../App.css';
 import { data } from '../../data/data';
 import ProductImg from './ProductImg';
 import '../../styles/components/Product/ProductInfo.css';
-
-function ProductInfo(match) {
+import ProductCard from '../Product/ProductCard';
+function ProductInfo({match}) {
     useEffect(()=>{
         fetchItem();
         console.log(match);
+        console.log(match.params.id);
     }, []);
 
-    const [item, setItem] = useState({
-
-    });
+    const [item, setItem] = useState({});
 
     const fetchItem = async () => {
         const fetchItem = await fetch(
-            '/Product/${item.id}'
+            '../../data/data.js'
         )
-        const item = await fetchItem.json();
+        item = await fetchItem.json();
+        setItem(item)
         console.log(item);
     }
-    
+    // createProduct(){    
+    //     let result= data.map((item)=>{
+    //         <ProductCard
+    //             key={item.id}
+    //             img={item.img}
+    //             description={item.description}
+    //         />
+    //     })
+    // }
+
     return (
         <div className="productInfo">
-            <h1>Tesst</h1>
-            <div>
-                {/* <img src={item.img.src}></img> */}
-            </div>
-            <div>
-                <h1>{item.productName}</h1>
-            </div>
+            {/* <h1>Tesst</h1> */}
+            {/* <ProductCard
+                key={item.id}
+                img={item.img}
+                description={item.description}
+            /> */}
+
         </div>
     )
 }

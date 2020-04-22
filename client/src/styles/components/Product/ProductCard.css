@@ -1,0 +1,13 @@
+.cardProduct{
+    display: flex;
+    width: auto;
+    flex-direction: column;
+}
+.detail{
+    display: flex;
+    flex-direction: row;
+}
+.productDetail{
+    display: flex;
+    flex-direction: column;
+}

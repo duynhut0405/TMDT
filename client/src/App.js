@@ -12,6 +12,8 @@ import Policy from "./containers/Policy";
 import Forgot_pass from "./containers/ForgetPass";
 import Products from "./containers/Product";
 import ProductInfo from "./components/Product/ProductInfo";
+
+
 function App() {
   return (
     <Router>
