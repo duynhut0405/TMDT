@@ -21,15 +21,24 @@ function ProductInfo({match}) {
         setItem(item)
         console.log(item);
     }
-    // createProduct(){    
-    //     let result= data.map((item)=>{
-    //         <ProductCard
-    //             key={item.id}
-    //             img={item.img}
-    //             description={item.description}
-    //         />
-    //     })
-    // }
+
+    const createProduct= data.map((item)=>{
+        let result;    
+        if(item.id == match.params.id)
+            {
+                result = 
+                <ProductCard
+                    key={item.id}
+                    img={item.img.src}
+                    productName={item.productName}
+                    description={item.description}
+                    status={item.status}
+                    price={item.price}
+                />
+            }
+            
+            return result;
+        })
 
     return (
         <div className="productInfo">
@@ -39,7 +48,7 @@ function ProductInfo({match}) {
                 img={item.img}
                 description={item.description}
             /> */}
-
+            {createProduct}
         </div>
     )
 }
