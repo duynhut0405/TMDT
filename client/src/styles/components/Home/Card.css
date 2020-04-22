@@ -4,7 +4,6 @@
     width: fit-content;
     margin: auto;
     /* margin-left: 30px;*/
-    
 }
 .productImg{
     width: 100%;
@@ -16,4 +15,5 @@
 .cartIcon{
     display: flex;  
     justify-content: center;
+    
 }

@@ -1,5 +1,7 @@
 .footer {
   background-color: #b0eacd;
+  /* display: flex;
+  justify-content: space-between; */
 }
 .footer li{
   list-style: none;
@@ -20,10 +22,17 @@
       -ms-flex-align: center;
           align-items: center;
 }
-
+.footer-logo{
+  display: flex;
+  flex-direction: column;
+}
 .footer-logo__text {
-  text-align: center;
+  display: flex;
+  justify-content: center;
   margin-top: 16px;
+}
+.footer-nav{
+  display: flex;
 }
 
 .footer-nav__menu {
@@ -39,12 +48,16 @@
 .footer-nav__menu li {
   font-size: 20px;
   font-weight: bold;
+  padding: 10px;
 }
 
 .footer-nav__menu li:hover {
   color: green;
 }
-
+.footer-contact{
+  display: flex;
+  flex-direction: column;
+}
 .footer-contact__info {
   display: -webkit-box;
   display: -ms-flexbox;

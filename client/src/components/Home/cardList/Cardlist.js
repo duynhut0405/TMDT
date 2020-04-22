@@ -39,7 +39,7 @@ class Cardlist extends React.Component {
     data.map((item) => {
       result.push(
           <div className="card-container" key={item.id}>
-            <Link to={'/Products/${item.id}'}>
+            <Link to={`/Products/${item.id}`}>
               <Card
               key={item.id}
               img={item.img.src}
