@@ -11,16 +11,15 @@ class ProductCard extends React.Component{
                     </div>
                     <div className="productDetail">
                         <div>
-                            <p>{this.props.productName}</p>
-                            <p>{this.props.status}</p>
+                            <h1>{this.props.productName}</h1>
+                            <p>status: {this.props.status}</p>
                         </div>
                         <div>
-                            <h1>{this.props.price}</h1>
-                            <p>rating</p>
+                            <h2>price: {this.props.price}</h2>
                         </div>
                         <div className = "numberOfProducts">
                             <div>
-                                <p>SL</p>
+                                
                             </div>
                             <div>
                                 <button title="add">Add</button>
@@ -29,6 +28,7 @@ class ProductCard extends React.Component{
                     </div>
                 </div>
                 <div className = "description">
+                    <h3>Description</h3>
                     <p>{this.props.description}</p>
                 </div>
             </div>
