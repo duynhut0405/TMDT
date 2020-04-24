@@ -6,7 +6,9 @@
     width: auto;
     justify-content: center;
 }
-
+.home li{
+    list-style: none;
+}
 .wallpaper{
     max-width: fit-content;
     position: absolute;
