@@ -2,19 +2,20 @@ import React,{useState} from "react";
 import '../../styles/components/SignUp/SignUp.css';
 import bg_signup from '../../assets/ovegets.jpeg';
 import axios from 'axios';
+
 const SignUp = props => {
   const [name,setName]=useState('');
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [password2,setPassword2]=useState('');
   const [check,setCheck]=useState(false);
-  const loginFunction=()=>{
+  const signUpFunction=()=>{
     if(!check){alert('Please accept the term of Use & Privacy Policy'); return;}
     if(!checkPass()){alert('Password and confirm password not match!'); return;}
-    axios.post('http://localhost:3030/SignUp',{name,email,password}).then(({user})=>alert('Sign up success'))
+    axios.post('http://localhost:3030/SignUp',{name,email,password}).then(({user})=>alert(`Sign up success with id:${user}`))
   }
   const checkPass=()=>{
-    if(password==''||password2=='') return false;
+    if(password.trim().length===0||password2.trim().length==0) return false;
     if(password!==password2)return false;
     return true;
   }
@@ -58,7 +59,7 @@ const SignUp = props => {
           
         
         <div className="signup_btn">
-          <button className="btn-ok" onClick={loginFunction}>Sign Up</button>
+          <button className="btn-ok" onClick={signUpFunction}>Sign Up</button>
         </div>
         </div>
       </div>
