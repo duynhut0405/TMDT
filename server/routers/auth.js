@@ -4,7 +4,7 @@ const {registerValidation,loginValidation} =require('../validation.js');
 var bcrypt = require('bcryptjs');
 
 //Register
-router.post('/SignIn',async (req,res)=>{
+router.post('/SignUp',async (req,res)=>{
    //Validate
    const {error} = registerValidation(req.body);
    if(error) {return res.status(400).send(error.details); }
