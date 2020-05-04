@@ -9,9 +9,8 @@ const Form =()=>{
     const [password,setPassword]=useState('');
     const loginFunciton=()=>{
         //e.preventDefault();
-        console.log(email,password)
         axios.post('http://localhost:3030/login',{email,password})
-            .then((data)=>console.log(data));
+            .then(({data})=>console.log(data));
     }
     return (
         <div className="login-wrap">
