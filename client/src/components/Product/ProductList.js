@@ -14,7 +14,7 @@ function ProductList(){
     }
     
     const styles = {
-        backgroundColor: '#00DD75'
+        backgroundColor: '#B0EACD'
     }
 
     return(
