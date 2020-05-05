@@ -4,6 +4,7 @@ import ProductImg from '../components/Product/ProductImg';
 import ProductList from '../components/Product/ProductList';
 import CardList from '../components/Home/cardList/Cardlist';
 import Sort from '../components/Product/Sort';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function Product(match){
     console.log(match);
