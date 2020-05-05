@@ -3,7 +3,7 @@ export const data=[
         img:{src:'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg'},
         id: '0',
         productName: 'Cam ',
-        type:'trái cây',
+        type:'fruits',
         status:'available',
         description:'something good',
         price: '1200000d',
@@ -12,7 +12,7 @@ export const data=[
         img:{src:'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg'},
         id: '1',
         productName: 'Cam Navel Ruột Vàng | Mỹ (1Kg)',
-        type:'trái cây',
+        type:'fruits',
         status:'available',
         description:'something normal',
         price: '1200000d'

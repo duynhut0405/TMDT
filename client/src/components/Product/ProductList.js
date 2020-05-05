@@ -9,7 +9,7 @@ function ProductList(){
         //some additional logic to verify you are in the home URI
         if (!location) return false;
         const { pathname } = location;
-        console.log(pathname);
+        // console.log(pathname);
         return pathname === "";
     }
     
@@ -21,16 +21,16 @@ function ProductList(){
         <nav>
             <ul className="Product-list">
             <li className="Fruit">
-            <NavLink to='/Products' isActive={checkActive} activeStyle={styles}><p>Trái cây</p></NavLink>
+            <NavLink to='/Products/Fruits' isActive={checkActive} activeStyle={styles}><p>Trái cây</p></NavLink>
                 <ul>
-                <div><li>Trái cây Việt</li></div>
-                <NavLink to='/Products'activeStyle={styles}><li>Trái cây Nhập</li></NavLink> 
+                <NavLink to='/Products/Fruits/Viet'activeStyle={styles}><li>Trái cây Việt</li></NavLink>
+                <NavLink to='/Products/Fruits/Import'activeStyle={styles}><li>Trái cây Nhập</li></NavLink> 
                 </ul>
             </li>
             <ul>
-            <NavLink to='/Products' activeStyle={styles}><li>Rau</li></NavLink>
-            <NavLink to='/Products' activeStyle={styles}><li>Củ</li></NavLink>
-            <NavLink to='/Products' activeStyle={styles}><li>Quả</li></NavLink>
+            <NavLink to='/Products/Vegetables' activeStyle={styles}><li>Rau</li></NavLink>
+            <NavLink to='/Products/' activeStyle={styles}><li>Củ</li></NavLink>
+            <NavLink to='/Products/' activeStyle={styles}><li>Quả</li></NavLink>
             </ul>
             </ul>
         </nav>
