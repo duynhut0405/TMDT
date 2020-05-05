@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
 import { data } from '../../../data/data';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { addToCart } from '../../../action/cart-action'
+import { connect } from 'react-redux'
 //use this in product page :v
 class Cardlist extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {};
+    this.handleClick = this.handleClick.bind(this)
   }
   //   createList(){
   //   let content = [];
@@ -34,36 +37,66 @@ class Cardlist extends React.Component {
   //   console.log(result);
   //   return result;
   // }
-  createList() {
-    let result = [];
-    data.map((item) => {
-      result.push(
-          <div className="card-container" key={item.id}>
-            <Link to={`/Products/${item.id}`}>
-              <Card
-              key={item.id}
-              img={item.img.src}
-              price={item.price}
-              productName={item.productName}
-              />
-            </Link>
-          </div>
-      )
-      // console.log(item.productName);
-    }
-    
-    )
-    return result;
+
+  handleClick(id) {
+    this.props.addToCart(id)
   }
+
+  // createList() {
+  //   const result = []
+  //   this.props.items.map(item =>
+  //     result.push(
+  //       <div className="card-container" key={item.id}>
+  //         <Link to={`/Products/${item.id}`}>
+  //           <Card
+  //             key={item.id}
+  //             img={item.img.src}
+  //             price={item.price}
+  //             productName={item.productName}
+  //             id={item.id}
+  //             handleClick={this.handleClick}
+  //           />
+  //         </Link>
+  //       </div>
+  //     )
+  //   )
+  //   return result;
+  // }
+
   render() {
+    const listCard = this.props.items.map(item => (
+      <div className="card-container" key={item.id}>
+        <Link to={`/Products/${item.id}`}>
+          <Card
+            key={item.id}
+            img={item.img.src}
+            price={item.price}
+            productName={item.productName}
+            id={item.id}
+            handleClick={this.handleClick}
+          />
+        </Link>
+      </div>))
     return (
       <div className="cardlist-container">
-        {this.createList()}
+        {listCard}
       </div>
     )
   }
 }
-export default Cardlist;
+
+const mapStateToProps = (state) => {
+  return {
+    items: state.items
+  }
+}
+const mapDispatchToProps = (dispatch) => {
+
+  return {
+    addToCart: (id) => { dispatch(addToCart(id)) }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Cardlist);
 
 
 

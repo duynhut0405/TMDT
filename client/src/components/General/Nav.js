@@ -3,7 +3,8 @@ import '../../styles/components/General/Nav.css';
 import { NavLink } from 'react-router-dom';
 import Button from './Button';
 import cart from '../../assets/cardIcon/cart.png';
-import Cart from '../General/Cart';
+import Cart from '../General/Cart'; 
+import { Link } from 'react-router-dom'
 const Nav = () => {
     const [appear,setAppear]=useState(false)
     const styles = {
@@ -29,8 +30,9 @@ const Nav = () => {
             <div id="searchBar">
                 <input type="search" id="searchInput"></input>
             </div>
-            <div className="img-container"><img src={cart} onClick={()=>{setAppear(!appear)}} alt="cart"></img></div>
-            {appear&&<Cart/>}
+            {/* <div className="img-container"><img src={cart} onClick={()=>{setAppear(!appear)}} alt="cart"></img></div>
+            {appear&&<Cart/>} */}
+            <Link to ="/cart"><i className="img-container"><img src={cart} alt="cart"></img></i></Link>
         </nav>
        
     );
