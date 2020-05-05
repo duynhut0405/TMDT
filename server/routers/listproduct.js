@@ -1,14 +1,30 @@
 const router = require('express').Router();
 const Product=require('../model/Product');
 
-router.get('/',async (req,res)=>{
-   const products=await Product.find({},(err,products)=>{
+router.get('/',async (req,res)=>{//http://localhost:3030/products?page=1
+  const page=parseInt(req.query.page);
+  const limit=9;
+  const startIndex= (page-1)*limit;
+  const endIndex=page*limit;
+  // const docLength = await Product.countDocuments();
+   await Product.find({},(err,products)=>{
     var productMap = {};
-
-    products.forEach(function(product) {
-      productMap[product._id] = product;
-    });
-    res.send(productMap);  
+    
+  //   if(endIndex < docLength)
+  //   {
+  //     productMap.next={
+  //     page:page+1
+  //   }
+  // }
+  //   if(startIndex > 0)
+  //   {
+  //     productMap.previous={
+  //     page:page-1
+  //     }
+  //   }
+    productMap.result=products.slice(startIndex,endIndex)
+    
+    res.json(productMap);  
    })
  })
 
