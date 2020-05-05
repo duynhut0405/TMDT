@@ -78,3 +78,4 @@ export const data =
     addedItems: [],
     total: 0
 }
+
