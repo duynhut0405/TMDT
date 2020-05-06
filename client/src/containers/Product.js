@@ -4,27 +4,34 @@ import ProductImg from '../components/Product/ProductImg';
 import ProductList from '../components/Product/ProductList';
 import CardList from '../components/Home/cardList/Cardlist';
 import Sort from '../components/Product/Sort';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import cartReducer from '../reducer/cardReducer';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-function Product(match){
-    console.log(match);
-    return (
-       <div className="product">
-           <ProductImg/>
-           <div className="product-shop">
-           <div>
-                <ProductList/>
-           </div>
-           <div className="product-main">
-               <div>
-                    <Sort/>
-               </div>
-               <div className="product-list">
-                    <CardList/>
-               </div>
-           </div>
-           </div>
-       </div>
-    );
+const store = createStore(cartReducer);
+
+class Product extends React.Component {
+    render() {
+        return (
+            <div className="product">
+                <ProductImg />
+                <div className="product-shop">
+                    <div>
+                        <ProductList />
+                    </div>
+                    <div className="product-main">
+                        <div>
+                            <Sort />
+                        </div>
+                        <div className="product-list">
+                            <CardList/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+
     }
+}
+
 export default Product;

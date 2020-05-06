@@ -22,7 +22,7 @@ function ProductInfo({match}) {
         // console.log(item);
     }
 
-    const createProduct= data.map((item)=>{
+    const createProduct= data.items.map((item)=>{
         let result;    
         if(item.id == match.params.id)
             {
