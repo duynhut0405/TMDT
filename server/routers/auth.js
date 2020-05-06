@@ -11,7 +11,7 @@ router.post('/SignUp',async (req,res)=>{
 
    //Checking if user already in database
    const emailExist=await User.findOne({email:req.body.email})
-   if(emailExist){return res.status(400).send('Email exist!')}
+   if(emailExist){return res.status(400).send([{'message':'Email exist'}])}
 
    //Hash password
    const salt = await bcrypt.genSalt(10);
@@ -35,13 +35,12 @@ router.post('/login',async (req,res)=>{
    //Validate
    const {error} = loginValidation(req.body);
    if(error) {return res.status(400).send(error.details); }
-   console.log({User});
    //Checking if user already in database
    const user=await User.findOne({email:req.body.email})
-   if(!user){return res.status(400).send('Email or password is wrong!')}
+   if(!user){return res.status(400).send([{'message':'Email or password is wrong!'}])}
    //Check password
    const validPassword=await bcrypt.compare(req.body.password,user.password);
-   if(!validPassword){return res.status(400).send('Email or password is wrong!')}
+   if(!validPassword){return res.status(400).send([{'message':'Email or password is wrong!'}])}
    
    res.status(201).send({name:user.name,id:user.id});
 })

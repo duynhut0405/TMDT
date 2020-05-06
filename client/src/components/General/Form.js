@@ -4,13 +4,25 @@ import '../../styles/components/General/Form.css';
 import Button from '../General/Button';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
+import {useDispatch} from 'react-redux';
+import {usrLogin} from '../../action/user-login'
 const Form =()=>{
     const [email,setEmail]=useState('');
     const [password,setPassword]=useState('');
+    const dispatch = useDispatch();
     const loginFunciton=()=>{
         //e.preventDefault();
         axios.post('http://localhost:3030/login',{email,password})
-            .then(({data})=>console.log(data));
+            .then(({data})=>{
+            console.log(data.name)
+            alert('Login success')
+            return dispatch(usrLogin(data))})
+            .catch(err=>{
+                const e=err.response.data;
+                let s='';
+                for(let i of e){s+=i.message;}
+                 alert(s);
+                });
     }
     return (
         <div className="login-wrap">

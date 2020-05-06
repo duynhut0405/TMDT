@@ -5,8 +5,6 @@ import Card from '../cardList/Card';
 import { addToCart } from '../../../action/cart-action'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-
-// const hData = data.items.slice(0, 6);
 class HotList extends React.Component {
   constructor() {
     super();
@@ -62,7 +60,7 @@ class HotList extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    items: state.items
+    items: state.cartReducer.items
   }
 }
 const mapDispatchToProps = (dispatch) => {
