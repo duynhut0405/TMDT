@@ -87,7 +87,7 @@ class Cardlist extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.items
+    items: state.cartReducer.items
   }
 }
 const mapDispatchToProps = (dispatch) => {
