@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../styles/components/Product/ProductCard.css';
-import ProductImg from './ProductImg';
-import {addToCart} from '../../action/cart-action'
+// import ProductImg from './ProductImg';
+// import {addToCart} from '../../action/cart-action'
 class ProductCard extends React.Component{
     render(){
         return(

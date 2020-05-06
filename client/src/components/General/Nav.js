@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../styles/components/General/Nav.css';
 import { NavLink } from 'react-router-dom';
-import Button from './Button';
+// import Button from './Button';
 import cart from '../../assets/cardIcon/cart.png';
-import Cart from '../General/Cart'; 
+// import Cart from '../General/Cart'; 
 import { Link } from 'react-router-dom'
 const Nav = () => {
-    const [appear,setAppear]=useState(false)
+    // const [appear,setAppear]=useState(false)
     const styles = {
         borderRadius: 10,
         backgroundColor: '#00DD75'

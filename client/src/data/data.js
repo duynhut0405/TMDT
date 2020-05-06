@@ -74,6 +74,14 @@ export const data =
                 description: 'something qeoqrb',
                 price: 100000
             },
+            {
+                img: { src: 'https://product.hstatic.net/1000141988/product/3_0f5d3911ba9740b5811694bb5a4f8549_large.jpg' },
+                id: '9',
+                productName: 'Cam ',
+                status: 'available',
+                description: 'something good',
+                price: 1200000
+            },
         ],
     addedItems: [],
     total: 0

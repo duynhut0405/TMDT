@@ -32,7 +32,7 @@ const Info = () => {
 
           {/* Image */}
           <div className="info-image">
-            <img src={Image1} alt="image" />
+            <img src={Image1} alt="info-img" />
           </div>
 
         </div>

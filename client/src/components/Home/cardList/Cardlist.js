@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
-import { data } from '../../../data/data';
+// import { data } from '../../../data/data';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../../action/cart-action'
 import { connect } from 'react-redux'
@@ -11,6 +11,8 @@ class Cardlist extends React.Component {
     super(props);
     this.state = {};
     this.handleClick = this.handleClick.bind(this)
+    console.log(props);
+    console.log(this.state);
   }
   //   createList(){
   //   let content = [];
@@ -102,34 +104,3 @@ export default connect(mapStateToProps, mapDispatchToProps)(Cardlist);
 
 
 
-//inuse
-
-
-  //test
-  // createContent(){
-  //   let content = [];
-  //   data.map((item)=>{
-  //     content.push(
-  //       <Card 
-  //       key={item.id}
-  //       img={item.img.src}
-  //       price={item.price}
-  //       productName={item.productName}
-  //     />)
-  //   })
-  //   console.log(content);
-  //   return content;
-  // }
-
-  // createList(){
-  //   let result = [];
-  //   (this.createContent()).map((el)=>{
-  //     if(el % 4 ==0){
-  //       result.push(<div className ="row">{el}</div>)
-  //     }
-  //     else{
-  //     result.push(el);
-  //     }
-  //   })
-  //   return result;
-  // }

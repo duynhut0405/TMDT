@@ -29,7 +29,7 @@ class Cart extends Component{
                        
                         <li className="collection-item_avatar" key={item.id}>
                                     <div className="item-img"> 
-                                        <img src={item.img.src} alt='undefined' className=""/>
+                                        <img src={item.img.src} alt={item.name} className=""/>
                                     </div>
                                 
                                     <div className="item-desc">

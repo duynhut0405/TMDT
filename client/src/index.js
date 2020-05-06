@@ -2,8 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
-import cartReducer from './reducer/cardReducer';
+
+import cartReducer from './reducer/cartReducer';
 import loginReducer from './reducer/loginReducer';
+
 import { Provider } from 'react-redux';
 import { createStore,combineReducers } from 'redux';
 
