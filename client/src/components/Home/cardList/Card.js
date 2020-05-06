@@ -3,9 +3,9 @@ import '../../../styles/components/Home/Card.css';
 import { Link } from 'react-router-dom';
 class Card extends Component{
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return (
-            <div className="card text-left" >
+            <div className="card" >
                 <div>
                     <img className="productImg" src={this.props.img} alt={this.props.productName} />
                 </div>

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
-import { data } from '../../../data/data';
+// import { data } from '../../../data/data';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../../action/cart-action'
 import { connect } from 'react-redux'
@@ -11,7 +11,8 @@ class Cardlist extends React.Component {
     super(props);
     this.state = {};
     this.handleClick = this.handleClick.bind(this)
-    
+    console.log(props);
+    console.log(this.state);
   }
   //   createList(){
   //   let content = [];

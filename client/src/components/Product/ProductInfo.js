@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
 import { data } from '../../data/data';
-import ProductImg from './ProductImg';
 import '../../styles/components/Product/ProductInfo.css';
 import ProductCard from '../Product/ProductCard';
 function ProductInfo({match}) {
@@ -24,7 +23,7 @@ function ProductInfo({match}) {
 
     const createProduct= data.items.map((item)=>{
         let result;    
-        if(item.id == match.params.id)
+        if(item.id === match.params.id)
             {
                 result = 
                 <ProductCard

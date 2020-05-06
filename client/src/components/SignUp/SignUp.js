@@ -15,7 +15,7 @@ const SignUp = props => {
     axios.post('http://localhost:3030/SignUp',{name,email,password}).then(({user})=>alert(`Sign up success with id:${user}`))
   }
   const checkPass=()=>{
-    if(password.trim().length===0||password2.trim().length==0) return false;
+    if(password.trim().length===0||password2.trim().length===0) return false;
     if(password!==password2)return false;
     return true;
   }

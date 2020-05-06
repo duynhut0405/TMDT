@@ -1,12 +1,12 @@
 import React from 'react';
 import '../../../styles/components/Home/HotList.css';
 import Card from '../cardList/Card';
-import { data } from '../../../data/data';
+// import { data } from '../../../data/data';
 import { addToCart } from '../../../action/cart-action'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 
-const hData = data.items.slice(0, 6);
+// const hData = data.items.slice(0, 6);
 class HotList extends React.Component {
   constructor() {
     super();
@@ -35,6 +35,7 @@ class HotList extends React.Component {
     // return hotContent;
     return this.props.items.slice(0, 6).map(item => {
       return <div className="card-container" key={item.id}>
+        <Link to={`/Products/${item.id}`}>
           <Card
             key={item.id}
             img={item.img.src}
@@ -43,6 +44,7 @@ class HotList extends React.Component {
             id={item.id}
             handleClick={this.handleClick}
           />
+          </Link>
       </div>
     })
   }

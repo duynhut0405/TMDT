@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { removeItem,addQuantity,subtractQuantity} from '../../action/cart-action'
 import '../../styles/components/General/Cart.css';
-import cam from '../../assets/aboutImage/bgAbout.jpeg';
+// import cam from '../../assets/aboutImage/bgAbout.jpeg';
 import Total from '../General/Total'
 import '../../styles/components/General/Cart.css'
 class Cart extends Component{
