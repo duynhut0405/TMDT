@@ -20,8 +20,8 @@ class Total extends Component{
 
 const mapStateToProps = (state)=>{
     return{
-        addedItems: state.addedItems,
-        total: state.total
+        addedItems: state.cartReducer.addedItems,
+        total: state.cartReducer.total
     }
 }
 //shipping neu muon xai
