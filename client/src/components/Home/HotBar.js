@@ -5,7 +5,7 @@ const HotBar=()=>{
     return(
         <div className="bar-wrapper">
             <div className="hot-text">
-                <p>HOT!!!</p>
+                <h1>HOT!!!</h1>
             </div>
             <div className="watchmore">
                 <p><NavLink to='/Products/'>Xem thêm</NavLink></p>

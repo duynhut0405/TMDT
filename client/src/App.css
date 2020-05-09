@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Fondamento';
-    src: local('Fondamento'), url(./fonts/Fondamento-Regular.ttf) format('truetype');
+    font-family: 'Roboto';
+    src: local('Roboto'), url(./fonts/Roboto-Regular.ttf) format('truetype');
 }
 
 body{
@@ -11,7 +11,7 @@ body{
     /* display: flex; */
     width: auto;
     height: auto;
-    font-family: Fondamento;
+    font-family: Roboto;
 }
 a{
     text-decoration: none;
