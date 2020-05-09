@@ -6,9 +6,10 @@ router.get('/',async (req,res)=>{//http://localhost:3030/products?page=1
   const limit=9;
   const startIndex= (page-1)*limit;
   const endIndex=page*limit;
+  var productMap = {};
   // const docLength = await Product.countDocuments();
-   await Product.find({},(err,products)=>{
-    var productMap = {};
+   productMap = await Product.find({},(err,products)=>{
+    
     
   //   if(endIndex < docLength)
   //   {
@@ -22,10 +23,12 @@ router.get('/',async (req,res)=>{//http://localhost:3030/products?page=1
   //     page:page-1
   //     }
   //   }
-    productMap.result=products.slice(startIndex,endIndex)
+  //console.log(products)
+    //productMap.result=products.slice(startIndex,endIndex)
     
-    res.json(productMap);  
+    
    })
+   res.json(productMap);  
  })
 
  router.get('/:id',async (req,res)=>{
