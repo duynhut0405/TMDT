@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../styles/components/Home/HotBar.css';
+import { NavLink } from 'react-router-dom';
 const HotBar=()=>{
     return(
         <div className="bar-wrapper">
@@ -7,7 +8,7 @@ const HotBar=()=>{
                 <p>HOT!!!</p>
             </div>
             <div className="watchmore">
-                <p><a href="#">Xem thêm</a></p>
+                <p><NavLink to='/Products/'>Xem thêm</NavLink></p>
             </div>
         </div>
     );

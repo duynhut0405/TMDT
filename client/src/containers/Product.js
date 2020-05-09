@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../styles/containers/Product.css';
 import ProductImg from '../components/Product/ProductImg';
 import ProductList from '../components/Product/ProductList';
 import CardList from '../components/Home/cardList/Cardlist';
 import Sort from '../components/Product/Sort';
-import cartReducer from '../reducer/cardReducer';
-import { Provider } from 'react-redux';
+import cartReducer from '../reducer/cartReducer';
+// import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 const store = createStore(cartReducer);

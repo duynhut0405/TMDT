@@ -1,9 +1,9 @@
-import React,{useState} from "react";
+import React from "react";
 import '../../styles/components/Product/ProductList.css';
 import { NavLink } from 'react-router-dom';
 
 function ProductList(){
-    const [appear,setAppear]=useState(false);
+    // const [appear,setAppear]=useState(false);
 
     const checkActive = (match, location) => {
         //some additional logic to verify you are in the home URI

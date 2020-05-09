@@ -22,7 +22,7 @@ const SignUp = props => {
     })
   }
   const checkPass=()=>{
-    if(password.trim().length===0||password2.trim().length==0) return false;
+    if(password.trim().length===0||password2.trim().length===0) return false;
     if(password!==password2)return false;
     return true;
   }
