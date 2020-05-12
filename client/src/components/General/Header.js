@@ -26,7 +26,10 @@ const Header = ()=>{
                 </div>
             </div>:<div className="btnLocation">
                 <p>{onLog}</p>
-                <Button name='Log out' onClick={()=>dispatch(usrLogout())}/>
+                <Button name='Log out' onClick={()=>{
+                    localStorage.removeItem('auth-token')
+                    dispatch(usrLogout())}
+                    }/>
             </div>}
             {!onLog&&appear&&<Form/>}
         </div>
