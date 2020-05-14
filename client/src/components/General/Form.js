@@ -12,12 +12,16 @@ const Form =()=>{
     const dispatch = useDispatch();
     const loginFunciton=()=>{
         //e.preventDefault();
+        
         axios.post('http://localhost:3030/login',{email,password})
-            .then(({data})=>{
-            console.log(data.name)
+            .then((data)=>{
+                //console.log(data.headers['auth-token'])
+            localStorage.setItem('auth-token',data.headers['auth-token'])
+            //console.log(data)
             alert('Login success')
-            return dispatch(usrLogin(data))})
+            return dispatch(usrLogin(data.data))})
             .catch(err=>{
+                console.log(err)
                 const e=err.response.data;
                 let s='';
                 for(let i of e){s+=i.message;}

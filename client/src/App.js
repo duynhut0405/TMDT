@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import Home from "./containers/Home";
 import "./App.css";
 import Header from "./components/General/Header";
@@ -13,8 +13,22 @@ import Forgot_pass from "./containers/ForgetPass";
 import Products from "./containers/Product";
 import ProductInfo from "./components/Product/ProductInfo";
 import Cart from "./components/General/Cart"
-
+import {useDispatch} from 'react-redux';
+import {usrLogin} from './action/user-login'
+import axios from 'axios';
 function App() {
+  const dispatch=useDispatch();
+  useEffect( ()=>{
+    const token = localStorage.getItem('auth-token')
+    if(token)
+    {async function fetchUser()
+    {
+    console.log('token',token)
+    await axios.get('http://localhost:3030/login',{headers:{"auth-token":token}}).then((data)=>{
+        return dispatch(usrLogin(data.data))})}
+fetchUser();}
+}
+  ,[]);
   return (
     <Router>
       <div className="App">
