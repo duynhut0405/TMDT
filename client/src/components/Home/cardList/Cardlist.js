@@ -5,14 +5,16 @@ import Card from '../cardList/Card';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../../action/cart-action'
 import { connect } from 'react-redux'
+import Axios from 'axios';
 //use this in product page :v
 class Cardlist extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    
     this.handleClick = this.handleClick.bind(this)
-    console.log(props);
-    console.log(this.state);
+  }
+  state={
+    productsData:[]
   }
   //   createList(){
   //   let content = [];
@@ -39,7 +41,10 @@ class Cardlist extends React.Component {
   //   console.log(result);
   //   return result;
   // }
-
+  componentDidMount(){
+    Axios.get('http://localhost:3030/products')
+    .then(data=>{this.setState({productsData:data.data})}).catch(err=>console.log(err))
+  }
   handleClick(id) {
     this.props.addToCart(id)
   }
@@ -66,14 +71,14 @@ class Cardlist extends React.Component {
   // }
 
   render() {
-    const listCard = this.props.items.map(item => (
+    const listCard = this.state.productsData.map(item => (
       <div className="card-container" key={item.id}>
         <Link to={`/Products/${item.id}`}>
           <Card
             key={item.id}
-            img={item.img.src}
+            img={item.img}
             price={item.price}
-            productName={item.productName}
+            productName={item.name}
             id={item.id}
             handleClick={this.handleClick}
           />
