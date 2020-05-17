@@ -13,7 +13,7 @@ class Card extends Component{
                     <h4>{this.props.productName}</h4>
                 </div>
                 <div>
-                    <p>Giá: {this.props.price} dong</p>
+                    <p>Giá: {this.props.price} $</p>
                 </div>
                 <Link>
                 <div className="cartIcon">
