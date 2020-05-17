@@ -5,6 +5,7 @@ import * as serviceWorker from "./serviceWorker";
 
 import cartReducer from './reducer/cartReducer';
 import loginReducer from './reducer/loginReducer';
+import sortReducer from './reducer/sortReducer';
 
 import { Provider } from 'react-redux';
 import { createStore,combineReducers } from 'redux';
@@ -12,7 +13,7 @@ import { createStore,combineReducers } from 'redux';
 // import "bootstrap/dist/css/bootstrap.css";
 
 // const store = createStore(cartReducer);
-const rootReducer = combineReducers({cartReducer,loginReducer});
+const rootReducer = combineReducers({cartReducer,loginReducer,sortReducer});
 const store = createStore(rootReducer);
 ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById("root"));
 

@@ -3,7 +3,7 @@ import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
 // import { data } from '../../../data/data';
 import { Link } from 'react-router-dom';
-import { addToCart } from '../../../action/cart-action'
+import { addToCart } from '../../../action/cart-action';
 import { connect } from 'react-redux'
 import Axios from 'axios';
 //use this in product page :v
@@ -14,7 +14,7 @@ class Cardlist extends React.Component {
     this.handleClick = this.handleClick.bind(this)
   }
   state={
-    productsData:[]
+    productsData:[],
   }
   //   createList(){
   //   let content = [];
@@ -41,10 +41,20 @@ class Cardlist extends React.Component {
   //   console.log(result);
   //   return result;
   // }
-  componentDidMount(){
-    Axios.get('http://localhost:3030/products')
-    .then(data=>{this.setState({productsData:data.data})}).catch(err=>console.log(err))
+ async componentDidMount(){
+    await Axios.get(`http://localhost:3030/products${this.props.route}`)
+    .then(data=>data.data)
+      .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))
   }
+
+ async componentDidUpdate(prevProps, prevState){
+    if(prevProps.route!==this.props.route){
+    await Axios.get(`http://localhost:3030/products${this.props.route}`)
+      .then(data=>data.data)
+      .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))
+    }
+  }
+
   handleClick(id) {
     this.props.addToCart(id)
   }
@@ -71,6 +81,7 @@ class Cardlist extends React.Component {
   // }
 
   render() {
+    console.log('route la:',this.props.route)
     const listCard = this.state.productsData.map(item => (
       <div className="card-container" key={item.id}>
         <Link to={`/Products/${item.id}`}>
@@ -94,7 +105,8 @@ class Cardlist extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.cartReducer.items
+    items: state.cartReducer.items,
+    route: state.sortReducer.route
   }
 }
 const mapDispatchToProps = (dispatch) => {
