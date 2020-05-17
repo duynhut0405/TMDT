@@ -92,7 +92,7 @@ class Cardlist extends React.Component {
           <Card
             key={item._id}
             img={item.img}
-            price={item.price}
+            price={Math.round(item.price*100)/100}
             productName={item.name}
             id={item.id}
             handleClick={this.handleClick}

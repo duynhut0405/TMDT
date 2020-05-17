@@ -13,18 +13,18 @@ const cartReducer = (state = data, action) => {
             addedItem.quantity += 1
             return {
                 ...state,
-                total: state.total + addedItem.price
+                total: Math.round((state.total + parseFloat(addedItem.price))*100)/100
             }
         }
         else {
             addedItem.quantity = 1;
             //calculating the total
-            let newTotal = state.total + addedItem.price
+            let newTotal = state.total + parseFloat(addedItem.price)
 
             return {
                 ...state,
                 addedItems: [...state.addedItems, addedItem],
-                total: newTotal
+                total: Math.round(newTotal*100)/100
             }
 
         }
@@ -34,22 +34,21 @@ const cartReducer = (state = data, action) => {
         let new_items = state.addedItems.filter(item => action.id !== item.id)
 
         //calculating the total
-        let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity)
-        console.log(itemToRemove)
+        let newTotal = state.total - (parseFloat(itemToRemove.price) * parseFloat(itemToRemove.quantity))
         return {
             ...state,
             addedItems: new_items,
-            total: newTotal
+            total: Math.round(newTotal*100)/100
         }
     }
     //INSIDE CART COMPONENT
     if (action.type === ADD_QUANTITY) {
         let addedItem = state.items.find(item => item.id === action.id)
         addedItem.quantity += 1
-        let newTotal = state.total + addedItem.price
+        let newTotal = state.total + parseFloat(addedItem.price)
         return {
             ...state,
-            total: newTotal
+            total: Math.round(newTotal*100)/100
         }
     }
     if (action.type === SUB_QUANTITY) {
@@ -57,19 +56,19 @@ const cartReducer = (state = data, action) => {
         //if the qt == 0 then it should be removed
         if (addedItem.quantity === 1) {
             let new_items = state.addedItems.filter(item => item.id !== action.id)
-            let newTotal = state.total - addedItem.price
+            let newTotal = state.total - parseFloat(addedItem.price)
             return {
                 ...state,
                 addedItems: new_items,
-                total: newTotal
+                total: Math.round(newTotal*100)/100
             }
         }
         else {
             addedItem.quantity -= 1
-            let newTotal = state.total - addedItem.price
+            let newTotal = state.total - parseFloat(addedItem.price)
             return {
                 ...state,
-                total: newTotal
+                total: Math.round(newTotal*100)/100
             }
         }
 

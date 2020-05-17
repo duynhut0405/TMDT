@@ -29,13 +29,13 @@ class Cart extends Component{
                        
                         <li className="collection-item_avatar" key={item.id}>
                                     <div className="item-img"> 
-                                        <img src={item.img.src} alt={item.name} className=""/>
+                                        <img src={item.img} alt={item.name} className=""/>
                                     </div>
                                 
                                     <div className="item-desc">
 
                                         <p>{item.productName}</p>
-                                        <p><b>Price: {item.price}dong</b></p> 
+                                        <p><b>Price: {Math.round(item.price*100)/100}$</b></p> 
                                         <p>
                                         <b>Quantity: {item.quantity}</b>
                                         </p>

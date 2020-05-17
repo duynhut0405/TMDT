@@ -17,7 +17,10 @@ class Card extends Component{
                 </div>
                 <Link>
                 <div className="cartIcon">
-                    <img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart-icon"  onClick={()=>this.props.handleClick(this.props.id)}/>
+                    <img src="https://img.icons8.com/bubbles/50/000000/buy.png" alt="cart-icon"  onClick={()=>{
+                        this.props.handleClick(this.props.id)
+                        alert(`ban da mua ${this.props.productName}`)
+                    }}/>
                 </div>
                 </Link>
             </div>
