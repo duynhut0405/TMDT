@@ -1,7 +1,7 @@
 import {SORT_TYPE} from '../action/action-type.js';
 
 const initState={
-route:'?sort=a-z'
+route:'/'
 }
 const sortType = (state=initState,action={})=>{
 switch(action.type){

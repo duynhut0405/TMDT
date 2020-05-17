@@ -42,16 +42,20 @@ class Cardlist extends React.Component {
   //   return result;
   // }
  async componentDidMount(){
-    await Axios.get(`http://localhost:3030/products${this.props.route}`)
+   do
+   { await Axios.get(`http://localhost:3030/products${this.props.route}`)
     .then(data=>data.data)
-      .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))
+      .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))}
+      while(this.state.productsData.length===0);
   }
 
  async componentDidUpdate(prevProps, prevState){
     if(prevProps.route!==this.props.route){
-    await Axios.get(`http://localhost:3030/products${this.props.route}`)
-      .then(data=>data.data)
-      .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))
+      do
+      { await Axios.get(`http://localhost:3030/products${this.props.route}`)
+       .then(data=>data.data)
+         .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))}
+         while(this.state.productsData.length===0);
     }
   }
 
