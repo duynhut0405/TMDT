@@ -2,6 +2,7 @@ import React from 'react';
 import '../../styles/components/Product/ProductCard.css';
 // import ProductImg from './ProductImg';
 // import {addToCart} from '../../action/cart-action'
+import QuantitiesButton from './QuantitiesButton';
 class ProductCard extends React.Component{
     render(){
         return(
@@ -13,18 +14,16 @@ class ProductCard extends React.Component{
                     <div className="productDetail">
                         <div>
                             <h1>{this.props.name}</h1>
-                            <p>status: {this.props.status}</p>
+                            <p>Status: {this.props.status}</p>
                         </div>
                         <div>
-                            <h2>price: {this.props.price} $</h2>
+                            <h3>Price: {this.props.price} $</h3>
                         </div>
                         <div className = "numberOfProducts">
                             <div>
-                                
+                                <QuantitiesButton/>     
                             </div>
-                            <div>
-                                <button title="add">Add</button>
-                            </div>
+                            <button title="add" className="addBtn">ADD</button>
                         </div>
                     </div>
                 </div>
