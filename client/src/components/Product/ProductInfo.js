@@ -1,52 +1,46 @@
 import React, { useState, useEffect } from 'react';
 import '../../App.css';
-import { data } from '../../data/data';
+// import Axios from 'axios';
+// import { data } from '../../data/data';
 import '../../styles/components/Product/ProductInfo.css';
 import ProductCard from '../Product/ProductCard';
 function ProductInfo({match}) {
     useEffect(()=>{
-        fetchItem();
+        fetchItems();
         // console.log(match);
         // console.log(match.params.id);
+        // console.log(data);
     }, []);
 
-    const [item, setItem] = useState({});
+    const [items, setItems] = useState([]);
 
-    const fetchItem = async () => {
-        const fetchItem = await fetch(
-            '../../data/data.js'
+    const fetchItems = async () => {
+        const data = await fetch(
+            'http://localhost:3030/products'
         )
-        item = await fetchItem.json();
-        setItem(item)
-        // console.log(item);
+        const items = await data.json();
+        setItems(items);
     }
 
-    const createProduct= data.items.map((item)=>{
+    const createProduct= items.map((item)=>{
         let result;    
         if(item.id === match.params.id)
             {
                 result = 
                 <ProductCard
                     key={item.id}
-                    img={item.img.src}
-                    productName={item.productName}
+                    img={item.img}
+                    name={item.name}
                     description={item.description}
                     status={item.status}
                     price={item.price}
                 />
-            }
-            
+            }            
             return result;
         })
 
     return (
         <div className="productInfo">
-            {/* <h1>Tesst</h1> */}
-            {/* <ProductCard
-                key={item.id}
-                img={item.img}
-                description={item.description}
-            /> */}
             {createProduct}
         </div>
     )

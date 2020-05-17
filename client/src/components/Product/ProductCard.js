@@ -12,11 +12,11 @@ class ProductCard extends React.Component{
                     </div>
                     <div className="productDetail">
                         <div>
-                            <h1>{this.props.productName}</h1>
+                            <h1>{this.props.name}</h1>
                             <p>status: {this.props.status}</p>
                         </div>
                         <div>
-                            <h2>price: {this.props.price} dong</h2>
+                            <h2>price: {this.props.price} $</h2>
                         </div>
                         <div className = "numberOfProducts">
                             <div>
