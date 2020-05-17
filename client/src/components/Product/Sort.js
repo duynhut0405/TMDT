@@ -13,7 +13,7 @@ function Sort(){
             <div><p>Sort:</p></div>
             <div className="sort-select" onChange={selectFunc}>
             <select name="SortBy" id="SortBy" >
-            <option value="a-z" selected>A-Z</option>
+            <option selected value="a-z" selected>A-Z</option>
             <option value="z-a">Z-A</option>
             <option value="low_high">Prices low - high</option>
             <option value="high_low">Prices high - low</option>
