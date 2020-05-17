@@ -85,12 +85,12 @@ class Cardlist extends React.Component {
   // }
 
   render() {
-    console.log('route la:',this.props.route)
+    // console.log('route la:',this.props.route)
     const listCard = this.state.productsData.map(item => (
       <div className="card-container" key={item.id}>
-        <Link to={`/Products/${item.id}`}>
+        <Link to={`/Products/${item._id}`}>
           <Card
-            key={item.id}
+            key={item._id}
             img={item.img}
             price={item.price}
             productName={item.name}
