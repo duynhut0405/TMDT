@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
 // import { data } from '../../../data/data';
@@ -6,13 +6,14 @@ import { Link } from 'react-router-dom';
 import { addToCart } from '../../../action/cart-action';
 import { connect } from 'react-redux'
 import Axios from 'axios';
+import Pagination from '../../Product/Pagination/Pagination';
 //use this in product page :v
 class Cardlist extends React.Component {
   constructor(props) {
     super(props);
-    
     this.handleClick = this.handleClick.bind(this)
   }
+  
   state={
     productsData:[],
   }
@@ -85,7 +86,7 @@ class Cardlist extends React.Component {
   // }
 
   render() {
-    // console.log('route la:',this.props.route)
+    console.log(this.state);
     const listCard = this.state.productsData.map(item => (
       <div className="card-container" key={item.id}>
         <Link to={`/Products/${item._id}`}>
@@ -98,6 +99,9 @@ class Cardlist extends React.Component {
             handleClick={this.handleClick}
           />
         </Link>
+        {/* <Pagination
+
+        /> */}
       </div>))
     return (
       <div className="cardlist-container">

@@ -51,7 +51,7 @@ class HotList extends React.Component {
     // return hotContent;
     return this.state.productsData ? this.state.productsData.slice(0, 6).map(item => {
       return <div className="card-container" key={item.id}>
-        <Link to={`/Products/${item.id}`}>
+        <Link to={`/Products/${item._id}`}>
           <Card
             key={item.id}
             img={item.img}
