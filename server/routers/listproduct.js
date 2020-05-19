@@ -4,17 +4,47 @@ const Product=require('../model/Product');
 router.get('/',async (req,res)=>{
   const type=req.query.filter;
   const sort=req.query.sort;
+  const page=parseInt(req.query.page);
+  const limit=9;
+  const startIndex= (page-1)*limit;
+  const endIndex=page*limit;
+  const docLength = await Product.countDocuments();
   let myproducts=[];
+  let productMap = {};
+  if(page){
+    if(endIndex < docLength){
+      productMap.next={
+        page:page+1
+      }
+    }
+    if(startIndex > 0){
+      productMap.previous={
+        page:page-1
+      }
+    }
+  }
   if(type){
     switch(type){//?filter=....
       case 'fruit':
       myproducts = await Product.find({type:"fruit"});
-      res.json(myproducts);
-      return;
+      if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+      return res.json(productMap); 
+      }
+      return res.json(myproducts);
+      
       case 'vegetable':
       myproducts = await Product.find({type:"vegetable"});
-      res.json(myproducts);
-      return;
+      if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+        return res.json(productMap); 
+        }
+      return res.json(myproducts);
+      
+      case 'spice':
+      myproducts = await Product.find({type:"spice"});
+      if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+        return res.json(productMap); 
+        }
+      return res.json(myproducts);
     }
   }
   else if(sort){//?sort=...
@@ -24,6 +54,9 @@ router.get('/',async (req,res)=>{
           products.sort((x,y)=>x.name>y.name?1:-1);
           myproducts=products;
         });
+        if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+          return res.json(productMap); 
+        }
         res.json(myproducts);
         return;
       case 'z-a':
@@ -31,6 +64,9 @@ router.get('/',async (req,res)=>{
           products.sort((x,y)=>x.name<y.name?1:-1);
           myproducts=products;
         });
+        if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+          return res.json(productMap); 
+          }
         res.json(myproducts);
         return;
       case 'high_low':
@@ -38,6 +74,9 @@ router.get('/',async (req,res)=>{
           products.sort((x,y)=>x.price<y.price?1:-1);
           myproducts=products;
         });
+        if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+          return res.json(productMap); 
+          }
         res.json(myproducts);
         return;
       case 'low_high':
@@ -45,15 +84,33 @@ router.get('/',async (req,res)=>{
           products.sort((x,y)=>x.price>y.price?1:-1);
           myproducts=products;
         });
-        res.json(myproducts);
-        return;
+        if(page){productMap.result=myproducts.slice(startIndex,endIndex)
+          return res.json(productMap); 
+          }
+        return res.json(myproducts);
+        
     }
   }
   else
   {
-   myproducts = await Product.find({})
-   res.json(myproducts);  }
- })
+    myproducts = await Product.find({});
+    if(page){
+      if(endIndex < docLength){
+        productMap.next={
+          page:page+1
+        }
+      }
+      if(startIndex > 0){
+        productMap.previous={
+          page:page-1
+        }
+      }
+      productMap.result=myproducts.slice(startIndex,endIndex)
+      return res.json(productMap); 
+    }
+  return res.json(myproducts);
+ }
+})
 
 
 
