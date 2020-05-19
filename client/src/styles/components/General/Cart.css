@@ -16,10 +16,14 @@ font-family: monospace;
 .material-icons{
     font-family: 'Material Icon';
 }
-/* .item-img{
+.item-img{
     display: flex;
-    width: 40%;
+    justify-content: center;
 }
-.item-desc{
-    width: 40%;
-} */
+.item-img img{
+    width: 200px;
+}
+.add-remove{
+    display: flex;
+    flex-direction: column;
+}
