@@ -5,14 +5,32 @@ import Card from '../cardList/Card';
 import { addToCart } from '../../../action/cart-action'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import Axios from 'axios'
 class HotList extends React.Component {
   constructor() {
     super();
     this.state = {};
   }
 
-  handleClick=(id)=>{
+  handleClick = (id) => {
     this.props.addToCart(id)
+  }
+  async componentDidMount() {
+    do {
+      await Axios.get(`http://localhost:3030/products`)
+        .then(data => data.data)
+        .then(data => this.setState({ productsData: data })).catch(err => console.log(err))
+    }
+    while (this.state.productsData.length === 0);
+  }
+
+  async componentDidUpdate(prevProps, prevState) {
+    do {
+      await Axios.get(`http://localhost:3030/products`)
+        .then(data => data.data)
+        .then(data => this.setState({ productsData: data })).catch(err => console.log(err))
+    }
+    while (this.state.productsData.length === 0);
   }
 
   createHotList() {
@@ -31,20 +49,20 @@ class HotList extends React.Component {
     // }
     // );
     // return hotContent;
-    return this.props.items.slice(0, 6).map(item => {
+    return this.state.productsData ? this.state.productsData.slice(0, 6).map(item => {
       return <div className="card-container" key={item.id}>
         <Link to={`/Products/${item.id}`}>
           <Card
             key={item.id}
-            img={item.img.src}
+            img={item.img}
             price={item.price}
-            productName={item.productName}
+            productName={item.name}
             id={item.id}
             handleClick={this.handleClick}
           />
-          </Link>
+        </Link>
       </div>
-    })
+    }) : null
   }
   render() {
     return (
@@ -60,7 +78,7 @@ class HotList extends React.Component {
 }
 const mapStateToProps = (state) => {
   return {
-    items: state.cartReducer.items
+    items: state.cartReducer
   }
 }
 const mapDispatchToProps = (dispatch) => {

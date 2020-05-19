@@ -22,6 +22,17 @@ password:{
 date:{
     type:Date,
     default:Date.now
+},
+address:{
+    type: String,
+    required: true,
+    max: 1024,
+    min: 10
+},
+phonenum:{
+    type: Number,
+    required:true,
+    min:7
 }
 })
 
