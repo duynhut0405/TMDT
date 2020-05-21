@@ -1,28 +1,29 @@
-import { ADD_TO_CART,REMOVE_ITEM,SUB_QUANTITY,ADD_QUANTITY} from './action-type'
+import { ADD_TO_CART, REMOVE_ITEM, SUB_QUANTITY, ADD_QUANTITY } from './action-type'
 //add cart action
-export const addToCart= (id)=>{
-    return{
+export const addToCart = (id, quantity = null) => {
+    return {
         type: ADD_TO_CART,
-        id
+        id,
+        quantity
     }
 }
 //remove item action
-export const removeItem=(id)=>{
-    return{
+export const removeItem = (id) => {
+    return {
         type: REMOVE_ITEM,
         id
     }
 }
 //subtract qt action
-export const subtractQuantity=(id)=>{
-    return{
+export const subtractQuantity = (id) => {
+    return {
         type: SUB_QUANTITY,
         id
     }
 }
 //add qt action
-export const addQuantity=(id)=>{
-    return{
+export const addQuantity = (id) => {
+    return {
         type: ADD_QUANTITY,
         id
     }

@@ -4,8 +4,8 @@ import '../../App.css';
 // import { data } from '../../data/data';
 import '../../styles/components/Product/ProductInfo.css';
 import ProductCard from '../Product/ProductCard';
-function ProductInfo({match}) {
-    useEffect(()=>{
+function ProductInfo({ match }) {
+    useEffect(() => {
         fetchItems();
         console.log(match);
         // console.log(match.params.id);
@@ -43,12 +43,14 @@ function ProductInfo({match}) {
     return (
         <div className="productInfo">
             <ProductCard
-                    key={items._id}
-                    img={items.img}
-                    name={items.name}
-                    description={items.description}
-                    status={items.status}
-                    price={items.price}
+                key={items._id}
+                img={items.img}
+                name={items.name}
+                description={items.description}
+                status={items.status}
+                price={items.price}
+                id={items.id}  
+
             />
         </div>
     )
