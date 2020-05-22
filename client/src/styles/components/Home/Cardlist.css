@@ -1,13 +1,18 @@
 .cardlist-container{
-    width: 100%;
+    width:100%;
+    display: grid;
+    grid-template-columns:repeat(3,1fr);
+    
+}
+.cardlist-wrapper{
+width: 100%;
     margin: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
 }
 .card-container{
-    width: 20%;
+    width: auto;
     margin: 10px;
 }
 /* .cardList{
