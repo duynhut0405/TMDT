@@ -56,7 +56,9 @@ class Cardlist extends React.Component {
   }
 
  async componentDidUpdate(prevProps, prevState){
-    if(prevProps.route!==this.props.route){
+  console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
+    if(prevProps.route!==this.props.route||this.props.number!==prevProps.number){
+      console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
       do
       { 
         await Axios.get(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)

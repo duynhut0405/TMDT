@@ -13,7 +13,7 @@ const Pagination = ({maxPage})=>{
             {
                 pageNumbers.map(number=>(
                     <li key={number}>
-                        <a href={`?page=${number}`} ref={()=>dispatch(pageGet(number))}>{number}</a>
+                        <a href="#" onClick={()=>dispatch(pageGet(number))}>{number}</a>
                     </li>
                 ))
             }

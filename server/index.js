@@ -21,6 +21,5 @@ mongoose.connect(process.env.DB_CONNECT,{ useNewUrlParser: true, useUnifiedTopol
 app.use('/',authRoute);
 app.use('/products',productRoute);//localhost:3030/products
 app.listen(port, () => {
-    console.log('a')
     console.log(`Server listening at ${port}`);
 });
