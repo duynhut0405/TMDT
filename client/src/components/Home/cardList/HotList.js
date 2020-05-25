@@ -68,7 +68,7 @@ class HotList extends React.Component {
     return (
       <div className="hotList">
         <ul>
-          <div className="scrollList" style={{ overflowX: 'scroll' }}>
+          <div className="scrollList">
             {this.createHotList()}
           </div>
         </ul>
