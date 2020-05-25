@@ -24,10 +24,10 @@ function ProductList(){
             <NavLink to='/Products/?filter=fruit' isActive={checkActive} activeStyle={styles}><p>Fruits</p></NavLink>
             </li>
             <li>
-            <NavLink to='/Products/Vegetables' activeStyle={styles}><li>Vegetables</li></NavLink>
+            <NavLink to='/Products/?filter=vegetables' activeStyle={styles}><li>Vegetables</li></NavLink>
             </li>
             <li>
-            <NavLink to='/Products/Spices' activeStyle={styles}><li>Spices</li></NavLink>
+            <NavLink to='/Products/?filter=spices' activeStyle={styles}><li>Spices</li></NavLink>
             </li>
             </ul>
         </nav>
