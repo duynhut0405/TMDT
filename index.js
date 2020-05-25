@@ -18,6 +18,10 @@ app.use(function (req, res, next) {
 });
 //CONNECT TO DATABASE
 app.use(express.static('client'));
+app.use(express.static(path.join(__dirname, 'client')));
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'client', 'index.html'));
+  });
 mongoose.connect(process.env.DB_CONNECT,{ useNewUrlParser: true, useUnifiedTopology: true }, ()=>{console.log('Connect to DB!')});
 app.use('/',authRoute);
 app.use('/products',productRoute);//localhost:3030/products
