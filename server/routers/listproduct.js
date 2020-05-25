@@ -11,6 +11,7 @@ router.get('/',async (req,res)=>{
   const docLength = await Product.countDocuments();
   let myproducts=[];
   let productMap = {};
+  productMap.maxPage=Math.ceil(docLength/limit);
   if(page){
     if(endIndex < docLength){
       productMap.next={

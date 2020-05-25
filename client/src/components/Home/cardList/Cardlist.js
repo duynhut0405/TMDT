@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import '../../../styles/components/Home/Cardlist.css';
 import Card from '../cardList/Card';
 // import { data } from '../../../data/data';
@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import { addToCart } from '../../../action/cart-action';
 import { connect } from 'react-redux'
 import Axios from 'axios';
-import Pagination from '../../Product/Pagination/Pagination';
+import Pagination from "../../Product/Pagination/Pagination";
+// import Pagination from '../../Product/Pagination/Pagination';
 //use this in product page :v
 class Cardlist extends React.Component {
   constructor(props) {
@@ -16,6 +17,8 @@ class Cardlist extends React.Component {
   
   state={
     productsData:[],
+    maxPage:0,
+    currentPage:1
   }
   //   createList(){
   //   let content = [];
@@ -44,18 +47,25 @@ class Cardlist extends React.Component {
   // }
  async componentDidMount(){
    do
-   { await Axios.get(`http://localhost:3030/products${this.props.route}`)
+   {
+     console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
+      await Axios.get(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
     .then(data=>data.data)
-      .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))}
+      .then(data=>this.setState({productsData:data.result,maxPage:data.maxPage})).catch(err=>console.log(err))}
       while(this.state.productsData.length===0);
   }
 
  async componentDidUpdate(prevProps, prevState){
-    if(prevProps.route!==this.props.route){
+  console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
+    if(prevProps.route!==this.props.route||this.props.number!==prevProps.number){
+      console.log(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
       do
-      { await Axios.get(`http://localhost:3030/products${this.props.route}`)
-       .then(data=>data.data)
-         .then(data=>this.setState({productsData:data})).catch(err=>console.log(err))}
+      { 
+        await Axios.get(`http://localhost:3030/products${this.props.route==='/'?`?page=${this.props.number}`:`${this.props.route}&page=${this.props.number}`}`)
+       .then(data=>{
+         console.log(data)
+        return data.data})
+         .then(data=>this.setState({productsData:data.result,maxPage:data.maxPage})).catch(err=>console.log(err))}
          while(this.state.productsData.length===0);
     }
   }
@@ -103,9 +113,13 @@ class Cardlist extends React.Component {
 
         /> */}
       </div>))
+      //console.log(this.state.maxPage);
     return (
+      <div className="cardlist-wrapper">
       <div className="cardlist-container">
         {listCard}
+      </div>
+      <Pagination maxPage={this.state.maxPage}/>
       </div>
     )
   }
@@ -114,7 +128,8 @@ class Cardlist extends React.Component {
 const mapStateToProps = (state) => {
   return {
     items: state.cartReducer.items,
-    route: state.sortReducer.route
+    route: state.sortReducer.route,
+    number:state.paginationReducer.number
   }
 }
 const mapDispatchToProps = (dispatch) => {

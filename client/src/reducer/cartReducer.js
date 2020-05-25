@@ -17,9 +17,10 @@ const cartReducer = (state = data, action) => {
             }
         }
         else {
-            addedItem.quantity = 1;
+            console.log(action.quantity)
+            addedItem.quantity = action.quantity || 1;
             //calculating the total
-            let newTotal = state.total + parseFloat(addedItem.price)
+            let newTotal = state.total + parseFloat(addedItem.price* addedItem.quantity)
 
             return {
                 ...state,
